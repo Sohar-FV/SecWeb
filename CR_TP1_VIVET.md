@@ -52,10 +52,10 @@ Password : 10
 
 ## Lettre 3
 
-Le texte est composé de nombres avec 2 ou 3 chiffres inférieurs à 117 -> valeurs décimales de la table ASCII :
-```
-Le 15 mai 2020 a Aubiere A qui de droit Login identique et mot de passe ASCII pour la prochaine lettrePasca
-```
+Le texte est composé de nombres avec 2 ou 3 chiffres inférieurs à 117 -> valeurs décimales de la table ASCII :  
+
+```Le 15 mai 2020 a Aubiere A qui de droit Login identique et mot de passe ASCII pour la prochaine lettre Pascal```
+
 Login : Pascal
 Password : ASCII
 
@@ -65,15 +65,16 @@ Password : ASCII
 Clé de hachage
 
 Plusieurs lignes ont le même H(password). En regroupant les astuces des lignes avec le même hachage on a :
-
+```
 Alice 709 -> Yellow, Pokemon, Nintendo 
 		  -> Pikachu
 
 Blaise 637 -> Musique, Flute enchantée, Amadeus, Compositeur 
-		   -> Mozart
+		   -> Mozart  
+		   
 Camille 722 -> Cubisme, Demoiselles d'Avignon, Guernica, Peintre, Pablo 
-			-> Picasso
-
+			-> Picasso  
+```
 Login : Alice
 Password : Pikachu
 
@@ -97,7 +98,7 @@ Chiffré : HI TWGTAX FKX FEB NAPNA GJFU EARU IYCNEOLI JQMU Heuyem
 Clé :     WE BSECWE BSE CWE BSECW EBSE CWEB SECWEBSE CWEB SECWEB
 Clair :   LE SECRET EST DIX MILLE CINQ CENT QUARANTE HUIT PASCAL
 ```
-Secret : 1548
+Secret 1: 1548
 
 Comme vu à la lettre 5 :
 
@@ -118,29 +119,52 @@ Y = B
 Montant = 5  
 BP = 42  
 ```
-Avec ? la valeur que l'on recherche :
-```
-ASCII(A,B,5,42,?) = H(A) + H(B) + H(5) + H(4) + H(2) + H(N)
-                  = 65 + 66 + 53 + 52 + 50 + ?
+Avec *N* la valeur que l'on recherche :
+<pre>
+ASCII(A,B,5,42,<i>N</i>) = H(A) + H(B) + H(5) + H(4) + H(2) + H(<i>N</i>)
+                  = 65 + 66 + 53 + 52 + 50 + <i>N</i>
                   = 286
+</pre>
+On cherche alors N le plus faible possible tel que :
+
+ASCII((286 + ASCII(*N*))) est divible par 3 et par 5.
+
+Pour trouver cet valeur j'ai réalisé le programme suivant :  
+```java
+public class Main {
+    public static void main(String[] args){
+        int n;
+        int val;
+        int val_ascii;
+        n = 0;
+        val_ascii = 1;
+
+        while ((val_ascii % 3) != 0 || (val_ascii % 5) !=0) {
+            val = 286 + ASCII(Integer.toString(n));
+
+            val_ascii = ASCII(Integer.toString(val));
+            System.out.println(val_ascii);
+            n++;
+        }
+
+        System.out.println("Terminé : n = " + (n-1) + " & tot = " + val_ascii);
+    }
+
+    // Renvoie le code ASCII de la somme des caractères de la chaîne passée en paramètre
+    private static int ASCII(String s) {
+        int result = 0;
+        for (int i=0; i< s.length(); i++){
+            result += s.charAt(i);
+        }
+        return result;
+    }
+}
 ```
-On cherche alors N tel que :
 
-ASCII((286 + ASCII(N))) est divible par 3 et par 5.
+On obtient le résultat suivant :
+```Terminé : n = 89 & tot = 165```
 
-286 + 48 = 334 -> ASCII(334) = 51 + 51 + 52 = 154
-286 + 49 = 335 -> ASCII(335) = 51 + 51 + 53 = 155 -> div par 5 mais par 3
-286 + 50 = 336 -> ASCII(336) = 51 + 51 + 54 = 156
-286 + 51 = 337 -> ASCII(337) = 51 + 51 + 55 = 157
-286 + 52 = 338 -> ASCII(338) = 51 + 51 + 56 = 158
-286 + 53 = 339 -> ASCII(340) = 51 + 51 + 57 = 159
-286 + 54 = 340 -> ASCII(340) = 51 + 52 + 48 = 160 -> div par 5 mais pas 3
-286 + 55 = 341 -> ASCII(341) = 51 + 52 + 49 = 169
-286 + 56 = 342 -> ASCII(342) = 51 + 52 + 50 = 170 -> div par 5 mais pas 3
-286 + 57 = 343 -> ASCII(343) = 51 + 52 + 51 = 171
-
-!!! Le faire dans un programme
-
+Secret 2 : 89
 
 Comme vu à la lettre 5 :
 
