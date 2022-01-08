@@ -168,5 +168,14 @@ Secret 2 : 89
 
 Comme vu à la lettre 5 :
 
-Login : Camille
+Login : Camille  
 Password : Picasso
+
+## Lettre 7
+
+Bob doit trouver les 4 chiffres de la combinaison, avec 10 possibilités pour chaque chiffre. Comme on sait qu'un chiffre est correct lorsqu'il est tapé
+
+Login : Pascal
+Password : 37
+
+
