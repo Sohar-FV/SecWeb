@@ -173,9 +173,18 @@ Password : Picasso
 
 ## Lettre 7
 
-Bob doit trouver les 4 chiffres de la combinaison, avec 10 possibilités pour chaque chiffre. Comme on sait qu'un chiffre est correct lorsqu'il est tapé
+Bob doit trouver les 4 chiffres de la combinaison, avec 10 possibilités pour chaque chiffre. On sait qu'un chiffre est correct lorsqu'il est saisi.  
+Dans le pire cas, où le code serait 9999 et où Bob testerait des valeurs à partir de 0 jusqu'à 9, on aurait :  
+```
+étape 1, trouver le premier chiffre : on teste les valeurs de 0 à 9 -> 10 combinaisons
+étape 2, trouver le deuxième chiffre : on teste les valeurs de 0 à 9, mais on commence à partir de la 10ème combinaison de l'étape 1 -> 10 - 1 combinaisons
+étape 3, trouver le troisième chiffre : idem -> 10 - 1 combinaisons
+étape 3, trouver le troisième chiffre : idem -> 10 - 1 combinaisons
+```
+Au total, on a 37 combinaisons
 
 Login : Pascal
 Password : 37
 
+## Lettre 8
 
