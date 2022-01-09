@@ -179,7 +179,7 @@ Dans le pire cas, où le code serait 9999 et où Bob testerait des valeurs à pa
 étape 1, trouver le premier chiffre : on teste les valeurs de 0 à 9 -> 10 combinaisons
 étape 2, trouver le deuxième chiffre : on teste les valeurs de 0 à 9, mais on commence à partir de la 10ème combinaison de l'étape 1 -> 10 - 1 combinaisons
 étape 3, trouver le troisième chiffre : idem -> 10 - 1 combinaisons
-étape 3, trouver le troisième chiffre : idem -> 10 - 1 combinaisons
+étape 4, trouver le troisième chiffre : idem -> 10 - 1 combinaisons
 ```
 Au total, on a 37 combinaisons
 
