@@ -188,3 +188,18 @@ Password : 37
 
 ## Lettre 8
 
+Déchiffrement 
+
+On sait qu'un produit est plus énergivore qu'un carré, donc sur le graphique fourni, un grand pic correspond à un produit et un petit pic à un carré.  
+De plus on sait qu'un carré seul correspond au bit 0 et qu'un carré suivi d'un produit correspond au bit 1. 
+
+En convertissant les pics de la courbe en binaire on obtient :
+
+```000010110100000```
+
+Comme la clé secrète est codée sur 14 bit, on obtient alors :
+
+```00001011010000 -> 720```
+
+Login : Pascal
+Password : 720
