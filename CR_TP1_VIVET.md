@@ -246,7 +246,7 @@ s = 40
 
 Cela donne la courbe suivante :
 
-
+![Courbe](Rapport_TP1/courbe.PNG)
 
 Login : Pascal
 Password : 40
