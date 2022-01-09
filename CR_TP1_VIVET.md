@@ -2,7 +2,7 @@
 
 https://sancy.iut-clermont.uca.fr/~lafourcade/WebSec.html
 
-Réalisé du 07/01/2022 au 10/01/2022 par Florian VIVET
+Réalisé du 07/01/2022 au 10/01/2022 par Florian VIVET et Léo GRAVIER
 
 ## Lettre 0
 
