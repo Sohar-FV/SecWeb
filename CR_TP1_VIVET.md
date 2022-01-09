@@ -183,12 +183,12 @@ Dans le pire cas, où le code serait 9999 et où Bob testerait des valeurs à pa
 ```
 Au total, on a 37 combinaisons
 
-Login : Pascal
-Password : 37
+Login : Pascal  
+Password : 37  
 
 ## Lettre 8
 
-Déchiffrement 
+Déchiffrement RSA
 
 On sait qu'un produit est plus énergivore qu'un carré, donc sur le graphique fourni, un grand pic correspond à un produit et un petit pic à un carré.  
 De plus on sait qu'un carré seul correspond au bit 0 et qu'un carré suivi d'un produit correspond au bit 1. 
@@ -197,9 +197,56 @@ En convertissant les pics de la courbe en binaire on obtient :
 
 ```000010110100000```
 
-Comme la clé secrète est codée sur 14 bit, on obtient alors :
+Comme la clé secrète est codée sur 14 bit puis convertie en décimal, on obtient alors :
 
 ```00001011010000 -> 720```
 
+Login : Pascal  
+Password : 720  
+
+## Lettre 9
+
+Image ASCII : on recherche un message binaire dans l'image. Avec une REGEX (/[0-1]/), on récupère uniquement les 0 et les 1 puis les mets bout à bout.  
+On obtient alors :  
+
+```1111001110000100```
+
+Converti en décimal : 
+
+```62340```
+
+Login : Pascal  
+Password : 62340  
+
+## Lettre 10
+
+On a trois points dont les coordonnées sont basées sur les lettres précédentes :
+
+A = (L2, L8) = (10, 720)  
+B = (L7, L5) = (37, 1548)  
+C = (L6, L9) = (89, 62340)  
+
+On cherche s tel que 
+```y = ax² + bx + s``` et où A, B et C appartiennent à la courbe de la fonction ```f(x) = y```
+
+Avec les coordonnées des points on a :
+```
+100a + 10b + s = 720  
+1369a + 37b + s = 10548
+7921a + 89b + s = 62340
+```
+
+En utilisant un solveur de système, on obtient :
+
+```
+a = 8
+b = -12
+s = 40
+```
+
+Cela donne la courbe suivante :
+
+
+
 Login : Pascal
-Password : 720
+Password : 40
