@@ -61,5 +61,29 @@ On obtient l'empreinte suivante :
 
 b) Pour changer la date d'expiration on tape ```expire``` et on indique la nouvelle durée d'expiration.
 
-c) 
+c) Pour ajouter une photo à notre clé, on tape : ```addphoto``` puis on indique le chemin de la photo à utiliser.
 
+d) Pour ajouter une sous-clé, on tape : ```addkey``` on sélectionne chiffremennt RSA et la validité de 4 jours.
+```
+type de clé : RSA (Chiffrement seul)
+Durée de validité : 4 jours
+```
+
+e) Pour modifier les préférences de fonctions de chiffrement symétrique et de hachage, on utilise ```setpref AES192 SHA256```
+
+f) On quitte avec ```save```
+
+4/ On a supprimé notre ancienne clé avec 
+```
+gpg --delete-secret-keys {key_id}
+gpg --delete-keys {key_id}
+```
+Pour supprimer la clé secrête puis la clé publique.
+
+Puis on a regénéré une clé avec :
+```
+gpg --gen-key 
+```
+Et les paramètres correspondant : nom et mail universitaire.
+
+5/
