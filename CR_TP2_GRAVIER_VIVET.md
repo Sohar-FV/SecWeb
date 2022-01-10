@@ -86,4 +86,7 @@ gpg --gen-key
 ```
 Et les paramètres correspondant : nom et mail universitaire.
 
-5/
+5/ Pour générer le certificat de révocation, on tape : ```gpg --gen-revoke {key_id}```
+Créer un tel certificat permet de révoquer une clé lorsqu'elle est compromise, remplacée ou plus utilisée.
+
+6/
