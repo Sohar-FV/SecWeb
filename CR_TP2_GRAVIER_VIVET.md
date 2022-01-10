@@ -89,4 +89,83 @@ Et les paramètres correspondant : nom et mail universitaire.
 5/ Pour générer le certificat de révocation, on tape : ```gpg --gen-revoke {key_id}```
 Créer un tel certificat permet de révoquer une clé lorsqu'elle est compromise, remplacée ou plus utilisée.
 
-6/
+6/ Pour exporter la clé au format binaire, on tape gpg --export. On obtient la clé suivante :
+
+```
+��a�Uw
+      �A<���s�-_Y�CA��*�
+                        w��2�+��uGPr&2/$��/�GG��rr�CS���	�
+                                                                 (�����G��^I�Ea�v�3h������iV�JUz{�q�G�pR��#��<}{h�">��L��z�F�!T��\����nDO����Qm{���/o�{��fR�U��j�q��yѾx'�H��}6-P�-0�n��D�����(�DYV����T��A@�t<¢T`^��e(R�|�D�~E/��w4x�$�e�S��9�v��
+�O'U�"��X��
+           ��{OK��O�D��݅�G�e��R���;�E�;��h>X3� VIVET <florian.vivet@etu.uca.fr>��
+>!���̙OV�#8�K���wa�Uw	g
+                         	
+	
+       �
+	�K���wE�
+                �.m&��)2&#$�E����9=4X�Y*U��ש��7�-�,X�g������-b�M�Y�N�cHT��l7�8�1�<W�g�Q��<��_S��8�Z��6��Xo��
+      ��D��P:�L��ƙh�~U�9]z�8�Y7!�z��vf#���O�E�U��`[y�H���Qv��*^e�6�
+@��E�=)Tr����q_����E 7��.ߘj/1mB��zO�p��dCmkC�̾��?�]93ٕ�&8�GqV�*�w�
+..�
+��h���Ө�@�k��w8�7>��Jȥ`�s-/Y�lb!qM��a�Uw��}�=��Z�Wm휷$r�3)
+                                        �0Y� I�[�j���e潡��`)�E��87N7C'����F�����a�
+                                                                                  ��-[͓��V��W߰�t�w�z�J�&,�Cg�U5�E���7d��:|��NH�׌�(�LFJ�D]�
+                          �:������j	
+�#a�~5�������ۖF�t���34�OV}�U��Ă��߄��ez{�`�v��G�B�2:e�IJ��u��������A�`�k޷Y��#I���_��lCp�U �lP�t!֌OO��ո�%&�H1<��dT��;���
+&!���̙OV�#8�K���wa�Uw
+                    	g
+	�K���w0�
+                ��Ǖ	%���l��Ц2��*��_Y�ᠣ�U[�?���u/�g�De<��7ă��m�GLx�%��
+                                                                         u6v�̔��*�A���8�龄�L�.�
+                                                                                             ,k_��h�Z��:tIs��8d�x�_"N�=���G~��y�
+                                  ��R���X��>*��e�+���Q�z�ʮ`-2��P��N�e"�T5�v?y�0��?�g\��m:����u�,��]�`�ۚ��9�QPl�7���p%�InK�Я
+��<ŗMn��+h"�Ž7�x���w���&l�e�ԃ?F�%�E�>�l
+                                       !Qju�rK����Iq����6(l9����b�5��
+                                                                     ���vܺJ�)p�ϧ��{D�bxB�QJ��AY��
+
+```
+Pour exporter la clé au format texte, on tape gpg --export --armor. On obtient la clé suivante :
+
+```
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+
+mQGNBGHcVXcBDAC8QR48qsvhc4UtX1nVQ0Hlf8YqBOkLd7fipzLoK6+6dUdQciYy
+LyTw2C/TR0e2AfFycsGCCB5DU+Ww/cwJmgsoFP+Kn6vHRx32/F5JkEVh23bQM2jW
+3Bq6nK5pVqcJSlV6e4Rxv0eecFIUpOwjs8M8fXto8QQiGT7RwEyA9RF6jkbzIVSm
+mlylpBKl0m5ET+XA6tdRbXuLEd7WL2+Ue5CYZlKDVajIapZxnc95HNG+eCfGSMLm
+G+t9Ni1QyC0wD/pug7RE5Byqp+Ua5IbeObTLzjoHpjerSocAQ05ggju3nuj2eWOV
+A2JRRh0uHWTe9N8sqIatHnc0eK4k6RvIZa1TBw4DGuE5f6R2h5sNnq+hcpYR5a8a
+k948nA3pKAD9RFlW9JkbG/r3glSPvkFAsXQ8wqJUYAdewsllKBFShnzPRJIDfkUv
+2wr4TydV7iLu7wVY+J0L+7F7T0uwF4ZP4b0cRPnT3YXhFUfrZavuUpCZ8aQ7nQFF
+sTsCtBYS+Wg+WDMAEQEAAbQgVklWRVQgPGZsb3JpYW4udml2ZXRAZXR1LnVjYS5m
+cj6JAdMEEwEKAD4WIQSB/4DMmU9WpCM4AQezS6+d+BUQdwUCYdxVdwIbAwUJA8Jn
+AAULCQgHAgYVCgkICwIEFgIDAQIeAQIXgAAKCRCzS6+d+BUQd0WNC/YubSbl6Cky
+JiMk4EXd+zAI7tc5PTRYEIxZKlXBsdepvrE3ky0GFvYGLBxYzWcB3fuuzcnCLWKq
+TfJZuU6lY0hU9pJsN604HMkxxDxXkmfnUecUjTwQrYhfUxpW//mnkhPbNpi0WG+S
+9Q2l8zh/9gVa4ZgMFxbJ2UT971A67EzJGcQXxplopX5VwjldeoE4s1k3If16puG4
+dmYj1szITx6URRfIVZbjYFsDeYlIrqiOUXax8ipeZfKkHTapCkCt5kXuPSlUchSl
+3fX3cV+MD9TU8UUgN6/HLt+Yag8vMW1Cq/KfehVPpXCe92RDbWtDv8y+FKUAkj/c
+XTkz2ZWSJjiuR3EcVs8qyXf8Ci4HLu8Kt0aL2YTuqiO/+EvAp81RL0/VA0i0wU9b
+52KPBXE6I4K/SRY09Qh7wmjarNQlpx0sXtLQfbY98MVayVdt7Zy3JHIGizMpDdbB
+aMbw79Oo+kDNa8TxHnc4yjc+uoUeSsilH2Ducy0vWRfpbGIhF3EVTbkBjQRh3FV3
+AQwAwDBZ9yBJp1ukaqHd4Y9l5r2hgrRgKdNF/wUQmTg3TgA3Qyf0squrRqaxArCD
+0WHQDNfNLVvNk7nOVvTLAVffsBexdOaRyVqXEhKRlt9v9h3n9XvTp/X5Y4BHDgYh
+N6CCIvtrg0biN81IZcVYO9hGSoREXawNQwBrTxTDS8JoZP4Iv6gFScQqF156ersY
+p+i9883u/JbSU+joTkjS14yWKM9MDet3Dh0H/nrXStUBJiy3Q2faVTUU10Wk6rjz
+N2Sp4zp8CxPOOvvgzBanttRqCQzhO0pAqyH93tcF7vZg8m+MzTF89gmDI1usyC0J
+vBHBxxXwYUFDFkGDM+0N1CNhxn41lfyGpI2Z69uWRu50Feb1izM0nU9WfcZV9YnE
+gvai34S9+mV6EHv+YNt2FJKlR6hCxDI6ZdBJSqyudaLorwabs528xOVB9IKzYIFr
+3rdZ/uEjSdHvqN9fFvrebENwzlUg8GxQ03Qh1oxPT4Xt1bjzJSb6SDE8+cUSZFSu
+izvTABEBAAGJAbwEGAEKACYWIQSB/4DMmU9WpCM4AQezS6+d+BUQdwUCYdxVdwIb
+DAUJA8JnAAAKCRCzS6+d+BUQdzCfDACh8ceVCSWK2cRsogKu0KYyxfQqj8xfWa3h
+oKOtVVuNP+oY+Y51L7RniERlPBP3ogE3xIMSHoGNbZlHTHjsJaLzC3U2dhXKzJTI
+HBoq2kH31vs4FMTpvoTHAEyaLokLLEOlAVrSfow4evxSCX8Na1/I7miIWpzvBTp0
+0QgESXO4Ets4ZI94zl8iTuw9haGVR36C6HnyjAAL+oZSBcvawliy8D4qlBCsZY4r
+ovEUz1HimXrvyq5gLTL775BQn55OG2+mZSKcA1Q1kHY/eaYwopc/mGdcFJ/sbTqe
+CI+Zf4vNGyTorXXpLLcF0l2NYJ7bmqHfOZZRUGykN8HK0HAlE+BJbhdLntCvCpiC
+EDzFlwMGTW7t4ytoFSLKxb03i3ifncR38tzNJmyBZb/UgwU/RuSoJZFFlT6ZbAsh
+UWp1tXJLm/aW1hhJcdIYnYWcG842KGw5vKfpxGLMBDX9gAyyuct5CHbcukqUKXDV
+ERHPp/zke0SxYngZQvlRSuWsw0FZyfw=
+=i/ZG
+-----END PGP PUBLIC KEY BLOCK-----
+```
