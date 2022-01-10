@@ -23,13 +23,43 @@ e9c904df912511ca88bb9eb492e2418846ab50e4
 ```
 ## Exercice 2
 
-1/ Avec gpg --gen-key, on peut générer une clé. Cependant pour pouvoir gérer des paramètres comme la durée de validité, il faut utiliser gpg --full-generate-key :
+1/ Avec gpg --gen-key, on peut générer une clé. Cependant pour pouvoir gérer des paramètres comme la durée de validité, il faut utiliser la commande suivante :
+```gpg --full-generate-key :```
+
+Dans les dialogues proposés lors de la saisie de la commande on indique les éléments suivants :
 
 ```
-gpg --full-generate-key
 type de clé : (2) DSA et ElGamal
 Durée de validité : 10 jours
 Identité et phrase de passe.
 ```
-
 Ceupgpl2tds
+
+2/ Pour afficher la liste des clés on tape ```gpg --list-key```
+
+On obtient l'affichage suivant :
+```
+gpg: vérification de la base de confiance
+gpg: marginals needed: 3  completes needed: 1  trust model: pgp
+gpg: profondeur : 0  valables :   1  signées :   0
+     confiance : 0 i., 0 n.d., 0 j., 0 m., 0 t., 1 u.
+gpg: la prochaine vérification de la base de confiance aura lieu le 2022-01-20
+/home/IUT/flvivet/.gnupg/pubring.kbx
+------------------------------------
+pub   dsa2048 2022-01-10 [SC] [expire : 2022-01-20]
+      ED11E07580CB167934036CA6AEA54545D4D6DAD2
+uid          [  ultime ] VIVET <florian.vivet@etu.uca.fr>
+sub   elg2048 2022-01-10 [E] [expire : 2022-01-20]
+```
+
+3/
+
+a) Pour récupérer l'empreinte de la clé on tape ```fpr```
+
+On obtient l'empreinte suivante :
+```Empreinte clef princip. : ED11 E075 80CB 1679 3403  6CA6 AEA5 4545 D4D6 DAD2```
+
+b) Pour changer la date d'expiration on tape ```expire``` et on indique la nouvelle durée d'expiration.
+
+c) 
+
