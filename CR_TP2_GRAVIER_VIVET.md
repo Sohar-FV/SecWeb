@@ -212,3 +212,8 @@ tyNvVzD8YNNYzr99CXWbOA7tZ4A66YxToB6E+6ChYRhMus+tQsuIrmDPPmAuv1QD
 mBeuVaW6A12hVyNKBqrgj4ycrNnKOtTp
 =Vyjl
 -----END PGP PUBLIC KEY BLOCK-----
+
+
+Vim -> .txt avec les 2 clés publiques
+-> gpg --encrypt --armor le fichier
+-> envoi le fichier par mail
