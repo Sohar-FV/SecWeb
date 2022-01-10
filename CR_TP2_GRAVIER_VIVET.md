@@ -1,6 +1,7 @@
 # TP2
 
 Exercice 1 :
+
 1/ On a téléchargé deux images de 380x380 pixel.
 
 2/ Suite à l'utilisation de la commande fournie :
