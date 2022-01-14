@@ -172,7 +172,8 @@ ERHPp/zke0SxYngZQvlRSuWsw0FZyfw=
 -----END PGP PUBLIC KEY BLOCK-----
 ```
 
-
+Votre clé publique :
+```
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 
 mQENBFQHNH8BCADd5F3Mf+FPYXWQJPTy6lEr86tnD04VbKW8BhDQ1xYfKPdN1KyD
@@ -230,9 +231,10 @@ lYJ8ad/tltrRBklIbfZ9/Uxu9bkVdwtShoiZD9WzAzezWsZujRxBfFZS41WUHiHe
 sg40X3SW1cQ=
 =T6+M
 -----END PGP PUBLIC KEY BLOCK-----
+```
+7/
+On a importé votre clé publique avec : ```gpg --import keyfile.key```
+Puis on a chiffré un ```mail.txt``` avec la commande ```gpg --encrypt --sign --armor -r pascal.lafourcade@uca.fr mail.txt```
+Vous avez normalement reçu notre mail avec un fichier chiffré et signé ```mail.txt.asc```
 
-
-
-Vim -> .txt avec les 2 clés publiques
--> gpg --encrypt --armor le fichier
--> envoi le fichier par mail
+8/
