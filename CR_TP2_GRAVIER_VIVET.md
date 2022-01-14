@@ -238,3 +238,112 @@ Puis on a chiffré un ```mail.txt``` avec la commande ```gpg --encrypt --sign --
 Vous avez normalement reçu notre mail avec un fichier chiffré et signé ```mail.txt.asc```
 
 8/
+Le fichier txt chiffré est deux fois moins volumineux que l'original. ```325942 -> 169850```
+Le fichier MP3 chiffré est plus lourd que l'original. ```6195911->8342426```
+
+9/
+Les fichiers chiffrés par le binôme pour l'un pour l'autre font la même taille après chiffrement. => 740 octets
+Les fichiers chiffrés avec AES256 font également la même taille, cependant ils sont beaucoup moins volumineux. => 48 octets
+```
+openssl enc -e -aes-256-cbc -in fichier -out fichier_secret
+```
+
+Exercice 3:
+1/
+On observe que l'on voit en clair le login et le mot de passe.
+
+Exercice 4:
+1/
+Avec la commande donnée, on a généré une clé rsa :
+```
+-----BEGIN RSA PRIVATE KEY-----
+MIIEogIBAAKCAQEAvQZBvYGM9UEmTv3keriYA9DhDWNbqOMQ3ld9hhW+SsX7ZaHA
+0tXX/Qk83WCOGbNKC8taDYWEyTW8sdjWRAaAhYKp+yDfuxf6crdZhYkRVtqZqE1g
+hKfQnO2jnvkU+6nAWHWNld4C3l2+YsaiLlN23+bYfya1xx+LnPKYR7Ez4BcdfOrE
+CnzTHWSfr6aNUHpQvx6OlxZ9cdGX1BskdU4SvWmoh8KT0hGg+5GZQUhVlSFvewEp
+bz5Y5O0DmmcidFcqU/WnaLHeeIanI/RPar/5Bt6PrBeseI73sDcSqvZjvCsawWAj
+IM/yXmcjNpXIfSEmbRV1fJtz5bgEhhERw/V7FQIDAQABAoIBACFKNs2/QSn4XVzQ
+Dism027onJoVA5GM2+2sjujMb4UPtSTDBgibrLxdoiCC3sPb9ZB6MdPrzeT518+i
+lqnIU14wEuutcHms0WjerZ988lbPjPw9FGCIhY79szFOQMnJrZxmp5bbULoE3IDc
+5rct7+Oi7kIGeUEmZxovB26o4K/4VIRB6vy5KujyY5HqQIn/50gXOkUVmjWJMZV3
+Enfi7RkyefyYHTdx4A23PppRpqZeJdbm9pitZU6pqfo30cmetXxgpR2MqHBdXBdu
+vU7XF16ZIfiAQybIEwJitxZN1fs1xLrNDztyGvrb/dbH7gsZKil2gA0/Va7KBFti
+Q8yFN0ECgYEA7FfAFd/U4Ur9YfANjyhkTNyeORUfkEz2Li67fh5hmOpRv6TOyx+X
+X+heZk4BKF2clYBwbkuwYMUXky028LBhf9CSOJnfJbWYL5eG/dGtbRAEc31x4TQz
+MFj1GqCT3DyLnvcQJmh0TVhuy2RbZ8r0r6eZUejej6fYrqxv5hPDr2kCgYEAzL7/
+IsYthRf5ko63l0fh0djdK8Icjx7WYAy3ndh3swBk5FaNLyIyDDUP4bFl8NfF4NTM
+I8qdDUhbZC+TvM0hjsOpqmDy+LSbl8fOZ+A3cwp+AbUkI2L74Kj5c9NycrcIqWx/
+DVgF+f7DI+c3HwVSRlxtJ/lsiRRnGFYiL9c1ZM0CgYBbztKNLL/TLIA1NTzvKW+c
+8+56mhwCwAK5eenXWhHrhspuuaSi/wicdvWEpDSK66JR6OzDy58eWDGKOHwpDzsw
+nWLPneYzDdGqWyBTJMpLnXc9LbO5Gb/wvf2odEw7t0E9ZRfe86CKExom5DslnI9k
+VKSYTu91umvPnqhxJahUUQKBgGVyXUgFmZhQgMA1JpI2c5VeNnfv/eaMCPweUPxM
+vUJb96GLoPixoMqbn/rbwv7KaqkzxtIVGivyphXF3RW3LeFm4TIiR0Eje9SAk6y0
+U8UUdcqyze0apmJyVuck5ZghSJFpyKn76zorGNU5Qv6DzHhAY3VjCHwDN/G++8Fo
+iHQhAoGAJ5VnQiIG8ZfrCDYBPIg1Sz8W3PhO77jyoJ6x3Gesp7YRiGgJcrqDo1cs
+1wiKPNQyU0/MUeLCj1sBkufp8VAJAi7UiB1Qn4tTr1XC+8jkcLkTN6F8VS/nCDRd
+TDAaAM1cEkVgn3kYqS3WtOZT9Qe896Iy2+bSdcKaJq6xJHSPOZA=
+-----END RSA PRIVATE KEY-----
+```
+
+2/
+Certificat du serveur :
+```
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number:
+            3d:ac:59:77:f8:e3:20:a5:fc:32:c5:7a:08:ba:b1:db:17:02:08:ab
+        Signature Algorithm: sha256WithRSAEncryption
+        Issuer: C = fr, ST = france, L = clermont, O = Internet Widgits Pty Ltd
+        Validity
+            Not Before: Jan 14 10:13:31 2022 GMT
+            Not After : Feb 13 10:13:31 2022 GMT
+        Subject: C = fr, ST = france, L = clermont, O = Internet Widgits Pty Ltd
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                RSA Public-Key: (2048 bit)
+                Modulus:
+                    00:f2:a7:33:cd:eb:d0:77:25:fe:ae:1d:f6:12:52:
+                    53:d6:99:e9:97:8b:31:1e:e5:fa:50:4d:b6:a5:e6:
+                    a4:b4:15:47:f4:15:88:31:69:f9:c9:55:35:b5:65:
+                    7a:8c:d5:06:14:81:bc:3b:de:8e:af:7a:1a:3c:b8:
+                    b4:cc:87:6a:53:ae:5b:58:61:75:07:1c:96:25:92:
+                    ed:24:53:e5:5b:ab:78:a2:83:09:13:fd:51:92:f8:
+                    59:d1:4b:cc:d9:14:47:5d:e4:60:72:f2:32:b3:ce:
+                    b6:79:20:db:de:21:8f:bd:c9:54:41:d4:cc:3b:21:
+                    17:4e:77:52:17:4a:9f:5a:2c:91:1a:49:42:eb:ad:
+                    03:49:13:20:81:bd:d4:1e:8c:f6:18:58:9e:a9:2c:
+                    0d:ed:9d:18:02:97:e4:96:8f:d2:e6:27:8f:f5:28:
+                    94:74:c8:15:bb:fb:e9:31:46:ed:ec:b7:6c:25:a3:
+                    3c:a6:4a:34:b1:ff:01:00:07:bc:14:be:8b:4f:98:
+                    25:02:c3:3d:60:ce:97:c6:28:59:df:ad:97:f0:c8:
+                    2c:15:79:1d:c0:83:05:7b:85:3e:b5:79:33:27:1d:
+                    00:32:2a:91:cb:7e:42:f8:77:db:b4:e5:6f:97:76:
+                    c3:13:be:9e:01:37:fd:5f:3a:5e:cb:f0:b6:fa:10:
+                    8f:45
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Subject Key Identifier: 
+                8F:4B:D0:D5:23:CA:E1:3E:07:BF:D2:18:FA:F5:01:1B:CA:93:CC:0A
+            X509v3 Authority Key Identifier: 
+                keyid:8F:4B:D0:D5:23:CA:E1:3E:07:BF:D2:18:FA:F5:01:1B:CA:93:CC:0A
+
+            X509v3 Basic Constraints: critical
+                CA:TRUE
+    Signature Algorithm: sha256WithRSAEncryption
+         bb:dc:0e:d4:94:a6:e8:d1:14:c6:3c:a4:bc:b7:f4:d5:0f:e9:
+         7e:0e:1f:a1:fe:7d:bc:ae:e4:b0:33:db:e0:07:06:8c:91:70:
+         58:25:18:6b:7f:3a:44:91:b9:c8:2c:2b:60:73:94:6a:e6:34:
+         5f:5f:97:09:95:16:4b:3b:cd:b4:ff:8a:e3:cc:27:b1:26:ea:
+         79:c4:56:68:9e:b1:a8:77:ca:66:4a:ac:d2:ea:11:a8:ec:42:
+         d3:72:af:4b:99:82:0e:b2:00:99:8a:24:69:d6:a4:b1:80:f7:
+         06:2c:3a:aa:51:aa:28:1c:7e:da:41:bf:5d:c4:76:aa:44:8a:
+         60:93:26:1b:8d:05:e4:2d:3c:86:d0:5d:e7:aa:20:09:31:b5:
+         bd:49:f6:7d:0f:39:1d:a0:66:bc:f4:8f:41:17:84:e2:44:71:
+         2e:c2:8b:e2:a4:05:e5:6c:e0:42:9c:b7:c6:4a:d9:d9:6b:22:
+         98:8f:b2:0e:cd:3a:98:31:f2:44:49:0e:26:4c:4f:dc:2c:5e:
+         29:5a:9b:f0:53:fa:36:31:b6:b4:f1:9b:f7:24:e8:03:2f:45:
+         34:6d:0c:bb:f1:6f:ec:d6:c3:32:60:e9:f9:b4:a8:0e:12:f0:
+         e8:0e:4a:ba:a9:bb:c9:77:6c:6f:f1:01:f2:93:3d:95:37:9b:
+         7a:76:94:5c
+```
