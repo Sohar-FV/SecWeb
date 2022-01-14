@@ -1,5 +1,7 @@
 # TP2
 
+https://sancy.iut-clermont.uca.fr/~lafourcade/WebSec.html
+
 ## Exercice 1 :
 
 1/ On a téléchargé deux images de 380x380 pixel.
