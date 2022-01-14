@@ -57,21 +57,21 @@ secure.bankvanbreda.be
 
 ### 2)
 
-Dans l'ordre, on obtient ces notes :
-A+
-B
-A+
-A+
+Dans l'ordre, on obtient ces notes :  
+A+  
+B  
+A+  
+A+  
 
 ### 3)
 
-Voici notre classement des meilleures banques ever :
-1 - mescomptes.mafrenchbank.fr
-2 - secure.bankvanbreda.be
-3 - homebank.argenta.be
-4 - ebanking.bicec.com
+Voici notre classement des meilleures banques ever :  
+1 - mescomptes.mafrenchbank.fr  
+2 - secure.bankvanbreda.be  
+3 - homebank.argenta.be  
+4 - ebanking.bicec.com  
 
-Le 1 est premier car il a les valeurs de sécurité les plus élevées.
-Le 2 et le 3 ont les mêmes niveaux de sécurité, maiss le 2 est compatible avec TLS 1.3.
-Le 4 à la pire note.
+Le 1 est premier car il a les valeurs de sécurité les plus élevées.  
+Le 2 et le 3 ont les mêmes niveaux de sécurité, maiss le 2 est compatible avec TLS 1.3.  
+Le 4 à la pire note.  
 
