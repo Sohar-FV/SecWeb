@@ -39,21 +39,21 @@ done
 
 ```
 
-On retrouve x mot de passe :
-Pour $1$BABA$DOzBWHNx08SgVSX/YuYvC/ :
-batman
+On retrouve x mot de passe :  
+Pour $1$BABA$DOzBWHNx08SgVSX/YuYvC/ :  
+batman  
 
-Pour $1$CACA$XLWo4OqFFCYICqYrZ0y5i/ :
-enigma
+Pour $1$CACA$XLWo4OqFFCYICqYrZ0y5i/ :  
+enigma  
 
 ## Exercice 3
 
 ### 1)
 
-mescomptes.mafrenchbank.fr
-ebanking.bicec.com
-homebank.argenta.be
-secure.bankvanbreda.be
+mescomptes.mafrenchbank.fr  
+ebanking.bicec.com  
+homebank.argenta.be  
+secure.bankvanbreda.be  
 
 ### 2)
 
