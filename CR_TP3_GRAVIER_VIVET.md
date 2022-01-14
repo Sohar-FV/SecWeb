@@ -2,7 +2,7 @@
 
 https://sancy.iut-clermont.uca.fr/~lafourcade/WebSec.html
 
-## Exercice 1
+## Exercice 1  
 
 1/ Le Hash nous est indiqué par la valeur entre les deux premiers $, et le salt entre le deuxième et le troisième.
 Ainsi , on a Hash : 1 et Salt : AAAA
