@@ -1,23 +1,28 @@
-# TP2
+# Sécurité WEB : TP2
 
-https://sancy.iut-clermont.uca.fr/~lafourcade/WebSec.html
+TP réalisé par Léo GRAVIER et Florian VIVET du 10/01/22 au 17/01/22
 
-## Exercice 1 :
+Sujet du TP : https://sancy.iut-clermont.uca.fr/~lafourcade/SECWEB/2022-TP2-Crypto-web.pdf
 
-1/ On a téléchargé deux images de 380x380 pixel.
+## Exercice 1 :
 
-2/ Suite à l'utilisation de la commande fournie :
+### 1) 
+On a téléchargé deux images de 380x380 pixel.
+
+### 2)
+Suite à l'utilisation de la commande fournie :
 ```
 openssl dgst -sha1 {file}
 ```
 
-On obtient, pour ces deux images :
+On obtient respectivement, pour ces deux images :
 ```
 0b97a402464fe97b46b96ae55173e684eae7357f
 8d65712dbcfcf461b10f9558ddd2fc4b0656fc45
 ```
 
-3/ Avec le site SHA1 collider, on a généré deux pdf ayant le même hashage, mais contenant chacun une image différente.
+### 3)
+Avec le site SHA1 collider, on a généré deux pdf ayant le même hashage, mais contenant chacun une image différente.
 On a vérifié le hashage avec la commande vue en 2/ :
 ```
 e9c904df912511ca88bb9eb492e2418846ab50e4
@@ -25,7 +30,8 @@ e9c904df912511ca88bb9eb492e2418846ab50e4
 ```
 ## Exercice 2
 
-1/ Avec gpg --gen-key, on peut générer une clé. Cependant pour pouvoir gérer des paramètres comme la durée de validité, il faut utiliser la commande suivante :
+### 1)
+Avec gpg --gen-key, on peut générer une clé. Cependant pour pouvoir gérer des paramètres comme la durée de validité, il faut utiliser la commande suivante :
 ```gpg --full-generate-key :```
 
 Dans les dialogues proposés lors de la saisie de la commande on indique les éléments suivants :
@@ -35,9 +41,9 @@ type de clé : (2) DSA et ElGamal
 Durée de validité : 10 jours
 Identité et phrase de passe.
 ```
-Ceupgpl2tds
 
-2/ Pour afficher la liste des clés on tape ```gpg --list-key```
+### 2)
+Pour afficher la liste des clés on tape ```gpg --list-key```
 
 On obtient l'affichage suivant :
 ```
@@ -54,7 +60,9 @@ uid          [  ultime ] VIVET <florian.vivet@etu.uca.fr>
 sub   elg2048 2022-01-10 [E] [expire : 2022-01-20]
 ```
 
-3/
+### 3)
+
+Depuis le menu obtenu en tapant ```gpg --edit-key```, on effectue les opérations suivantes
 
 a) Pour récupérer l'empreinte de la clé on tape ```fpr```
 
@@ -75,12 +83,12 @@ e) Pour modifier les préférences de fonctions de chiffrement symétrique et de
 
 f) On quitte avec ```save```
 
-4/ On a supprimé notre ancienne clé avec 
+### 4)
+On a supprimé notre ancienne clé avec les commandes suivantes pour supprimer la clé secrète puis la clé publique
 ```
 gpg --delete-secret-keys {key_id}
 gpg --delete-keys {key_id}
 ```
-Pour supprimer la clé secrête puis la clé publique.
 
 Puis on a regénéré une clé avec :
 ```
@@ -89,7 +97,7 @@ gpg --gen-key
 Et les paramètres correspondant : nom et mail universitaire.
 
 5/ Pour générer le certificat de révocation, on tape : ```gpg --gen-revoke {key_id}```
-Créer un tel certificat permet de révoquer une clé lorsqu'elle est compromise, remplacée ou plus utilisée.
+Créer un tel certificat permet de révoquer une clé lorsqu'elle est compromise, remplacée ou n'est plus utilisée.
 
 6/ Pour exporter la clé au format binaire, on tape gpg --export. On obtient la clé suivante :
 
@@ -126,6 +134,7 @@ Créer un tel certificat permet de révoquer une clé lorsqu'elle est compromise
                                                                      ���vܺJ�)p�ϧ��{D�bxB�QJ��AY��
 
 ```
+
 Pour exporter la clé au format texte, on tape gpg --export --armor. On obtient la clé suivante :
 
 ```
@@ -171,6 +180,10 @@ ERHPp/zke0SxYngZQvlRSuWsw0FZyfw=
 =i/ZG
 -----END PGP PUBLIC KEY BLOCK-----
 ```
+
+
+### 7)
+On a importé votre clé publique avec : ```gpg --import keyfile.key``` avec keyfile.key un fichier contenant la clé suivante : 
 
 Votre clé publique :
 ```
@@ -232,28 +245,29 @@ sg40X3SW1cQ=
 =T6+M
 -----END PGP PUBLIC KEY BLOCK-----
 ```
-7/
-On a importé votre clé publique avec : ```gpg --import keyfile.key```
+
 Puis on a chiffré un ```mail.txt``` avec la commande ```gpg --encrypt --sign --armor -r pascal.lafourcade@uca.fr mail.txt```
 Vous avez normalement reçu notre mail avec un fichier chiffré et signé ```mail.txt.asc```
 
-8/
+### 8)
 Le fichier txt chiffré est deux fois moins volumineux que l'original. ```325942 -> 169850```
-Le fichier MP3 chiffré est plus lourd que l'original. ```6195911->8342426```
+Le fichier MP3 chiffré est plus lourd que l'original. ```6195911 -> 8342426```
 
-9/
+### 9)
 Les fichiers chiffrés par le binôme pour l'un pour l'autre font la même taille après chiffrement. => 740 octets
-Les fichiers chiffrés avec AES256 font également la même taille, cependant ils sont beaucoup moins volumineux. => 48 octets
+Les fichiers chiffrés avec AES256 font également la même taille, cependant ils sont beaucoup moins volumineux. => 48 octets. Dans ce cas on utilisé la commande suivante :
 ```
 openssl enc -e -aes-256-cbc -in fichier -out fichier_secret
 ```
 
-Exercice 3:
-1/
+## Exercice 3:
+
+### 1)
 On observe que l'on voit en clair le login et le mot de passe.
 
-Exercice 4:
-1/
+## Exercice 4:
+
+### 1)
 Avec la commande donnée, on a généré une clé rsa :
 ```
 -----BEGIN RSA PRIVATE KEY-----
@@ -285,7 +299,7 @@ TDAaAM1cEkVgn3kYqS3WtOZT9Qe896Iy2+bSdcKaJq6xJHSPOZA=
 -----END RSA PRIVATE KEY-----
 ```
 
-2/
+### 2)
 Certificat du serveur :
 ```
 Certificate:
@@ -348,7 +362,7 @@ Certificate:
          7a:76:94:5c
 ```
 
-3/
+### 3)
 On a établie la connection entre avec le serveur :
 1er terminal :
 ```
