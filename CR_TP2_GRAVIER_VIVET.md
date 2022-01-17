@@ -250,12 +250,12 @@ Puis on a chiffré un ```mail.txt``` avec la commande ```gpg --encrypt --sign --
 Vous avez normalement reçu notre mail avec un fichier chiffré et signé ```mail.txt.asc```
 
 ### 8)
-Le fichier txt chiffré est deux fois moins volumineux que l'original. ```325942 -> 169850```
-Le fichier MP3 chiffré est plus lourd que l'original. ```6195911 -> 8342426```
+Le fichier txt chiffré est deux fois moins volumineux que l'original. ```325942 -> 169850```  
+Le fichier MP3 chiffré est plus lourd que l'original. ```6195911 -> 8342426```  
 
 ### 9)
-Les fichiers chiffrés par le binôme pour l'un pour l'autre font la même taille après chiffrement. => 740 octets
-Les fichiers chiffrés avec AES256 font également la même taille, cependant ils sont beaucoup moins volumineux. => 48 octets. Dans ce cas on utilisé la commande suivante :
+Les fichiers chiffrés par le binôme pour l'un pour l'autre font la même taille après chiffrement. => 740 octets  
+Les fichiers chiffrés avec AES256 font également la même taille, cependant ils sont beaucoup moins volumineux. => 48 octets. Dans ce cas on utilisé la commande suivante :  
 ```
 openssl enc -e -aes-256-cbc -in fichier -out fichier_secret
 ```
