@@ -246,8 +246,8 @@ sg40X3SW1cQ=
 -----END PGP PUBLIC KEY BLOCK-----
 ```
 
-Puis on a chiffré un ```mail.txt``` avec la commande ```gpg --encrypt --sign --armor -r pascal.lafourcade@uca.fr mail.txt```
-Vous avez normalement reçu notre mail avec un fichier chiffré et signé ```mail.txt.asc```
+Puis on a chiffré un ```mail.txt``` avec la commande ```gpg --encrypt --sign --armor -r pascal.lafourcade@uca.fr mail.txt```  
+Vous avez normalement reçu notre mail avec un fichier chiffré et signé ```mail.txt.asc```  
 
 ### 8)
 Le fichier txt chiffré est deux fois moins volumineux que l'original. ```325942 -> 169850```  
