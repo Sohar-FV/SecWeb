@@ -364,7 +364,7 @@ Certificate:
 ```
 
 ### 3)
-On a établie la connection entre avec le serveur :
+On a établie la connection entre avec le serveur :  
 1er terminal :
 ```
  Start Time: 1642155326
