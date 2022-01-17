@@ -183,9 +183,9 @@ ERHPp/zke0SxYngZQvlRSuWsw0FZyfw=
 
 
 ### 7)
-On a importé votre clé publique avec : ```gpg --import keyfile.key``` avec keyfile.key un fichier contenant la clé suivante : 
+On a importé votre clé publique avec : ```gpg --import keyfile.key``` avec keyfile.key un fichier contenant la clé suivante :   
 
-Votre clé publique :
+Votre clé publique :  
 ```
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 
@@ -255,7 +255,8 @@ Le fichier MP3 chiffré est plus lourd que l'original. ```6195911 -> 8342426```
 
 ### 9)
 Les fichiers chiffrés par le binôme pour l'un pour l'autre font la même taille après chiffrement. => 740 octets  
-Les fichiers chiffrés avec AES256 font également la même taille, cependant ils sont beaucoup moins volumineux. => 48 octets. Dans ce cas on utilisé la commande suivante :  
+Les fichiers chiffrés avec AES256 font également la même taille, cependant ils sont beaucoup moins volumineux. => 48 octets.   
+Dans ce cas on utilisé la commande suivante :    
 ```
 openssl enc -e -aes-256-cbc -in fichier -out fichier_secret
 ```
