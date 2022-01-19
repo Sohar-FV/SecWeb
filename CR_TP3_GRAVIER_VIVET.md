@@ -79,12 +79,12 @@ Le 4 à la pire note.
 
 ### 1)
 
-On a testé les Webmails suivants : Gmail, Free et 
+On a testé les Webmails suivants : Gmail, Free et Orange mail
 
 Pour Gmail on a :
 ```
 D'après la page d'information :
-- Chiffrement avec TLS AES 128 GCM SHA256, avec des clés de 128 bits
+- Chiffrement avec TLS AES128 GCM SHA256, avec des clés de 128 bits + TLS 1.3
 - Le site expire le 2 mars 2022
 
 D'après le certificat :
@@ -95,12 +95,23 @@ D'après le certificat :
 
 Pour Free on a :
 ```
-Chiffrement avec TLS ECDHE RSA AES128 GCM SHA256, avec des clés de 128 bits
+Chiffrement avec TLS ECDHE RSA AES128 GCM SHA256, avec des clés de 128 bits+ TLS 1.3
 Le site expire le 16 juillet 2022 
 
 D'après le certificat :
 - Site valide entre le 15/07/2021 à 02:00:00 et le 16/07/2022 à 01:59:59
 - Clé publique basée sur RSA de 2048bits
+- Signature avec SHA-256 with RSA Encryption
+```
+
+Pour Orange mail on a :
+```
+Chiffrement avec TLS ECDHE RSA AES128 GCM SHA256, avec des clés de 128 bits + TLS 1.2
+Le site expire le 16 juillet 2022 
+
+D'après le certificat :
+- Site valide entre le 29/07/2021 à 02:00:00 et le 30/08/2022 à 01:59:59
+- Clé publique basée sur RSA de 4096bits
 - Signature avec SHA-256 with RSA Encryption
 ```
 
