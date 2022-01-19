@@ -46,6 +46,36 @@ batman
 Pour $1$CACA$XLWo4OqFFCYICqYrZ0y5i/ :  
 enigma  
 
+## Exercice 2
+
+### 1)
+Mots de passe en clair
+
+Aucune action particulière n'est réalisée, on récupère le login et le mot de passe depuis la page d'authentification avec la méthode POST et on le stocke directement dans la base de données
+
+### 2)
+
+Même chose que la version précédente mais avant de stocker le mot de passe, on lance une fonction de hachage sur ce dernier. De plus pour vérifier la validité d'un mot de passe, on hache le mot de passe saisi et on le compare avec le mot de passe haché stocké dans la base.
+
+```php
+$hashed_passwd = hash('sha256', $passwd);
+```
+
+### 3)
+
+Même chose que la version 2), mais on ajoute un sel à la fonction de hachage.
+
+```
+$options = [
+    'salt' => 12,
+];
+echo password_hash($passwd, PASSWORD_BCRYPT, $options);
+```
+
+### 4)
+
+### 5)
+
 ## Exercice 3
 
 ### 1)
