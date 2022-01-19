@@ -48,12 +48,11 @@ enigma
 
 ## Exercice 2
 
-### 1)
-Mots de passe en clair
+### 1) Mots de passe en clair
 
 Aucune action particulière n'est réalisée, on récupère le login et le mot de passe depuis la page d'authentification avec la méthode POST et on le stocke directement dans la base de données
 
-### 2)
+### 2) Mots de passe hashés
 
 Même chose que la version précédente mais avant de stocker le mot de passe, on lance une fonction de hachage sur ce dernier. De plus pour vérifier la validité d'un mot de passe, on hache le mot de passe saisi et on le compare avec le mot de passe haché stocké dans la base.
 
@@ -61,20 +60,49 @@ Même chose que la version précédente mais avant de stocker le mot de passe, o
 $hashed_passwd = hash('sha256', $passwd);
 ```
 
-### 3)
+### 3) Mots de passe hachés et salés
 
 Même chose que la version 2), mais on ajoute un sel à la fonction de hachage.
 
-```
+```php
 $options = [
     'salt' => 12,
 ];
 echo password_hash($passwd, PASSWORD_BCRYPT, $options);
 ```
 
-### 4)
+### 4) Mots de passe hachés et salés
 
-### 5)
+Même chose que le point précédent mais on ajoute un élément propre à l'utilisateur dans le sel :  
+
+```php
+$options = [
+    'salt' => 12.$login,
+];
+echo password_hash($passwd, PASSWORD_BCRYPT, $options);
+```
+
+### 5) Mots de passe chiffré avec chiffrement symétrique puis hachés et salés
+
+Avant d'effectuer le hachage et l'ajout du sel comme les points précédents, on applique un algorithme de chiffrement symétrique sur le mot de passe.
+Ici on a utilisé AES-256-CTR avec la fonction suivante
+
+```php
+function encrypt($password) 
+    {
+        $output = false;
+        $encrypt_method = "AES-256-CTR";
+        $secret_key = 'xxxxxxxxxxxxxxxxxxxxxxxx'; // cle sur 256 bits
+        $secret_iv = 'xxxxxxxxxxxxxxxxxxxxxxxxx'; // cle sur 128 bits
+         // hash
+        $key = hash('sha256', $secret_key);    
+        // iv - encrypt method AES-256-CBC expects 16 bytes 
+        $iv = substr(hash('sha256', $secret_iv), 0, 16);
+        $output = openssl_encrypt($string, $encrypt_method, $key, 0, $iv);
+        $output = base64_encode($output);
+        return $output;
+    }
+```
 
 ## Exercice 3
 
