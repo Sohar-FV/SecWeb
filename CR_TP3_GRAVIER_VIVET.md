@@ -75,3 +75,32 @@ Le 1 est premier car il a les valeurs de sécurité les plus élevées.
 Le 2 et le 3 ont les mêmes niveaux de sécurité, maiss le 2 est compatible avec TLS 1.3.  
 Le 4 à la pire note.  
 
+## Exercice 4
+
+### 1)
+
+On a testé les Webmails suivants : Gmail, Free et 
+
+Pour Gmail on a :
+```
+D'après la page d'information :
+- Chiffrement avec TLS AES 128 GCM SHA256, avec des clés de 128 bits
+- Le site expire le 2 mars 2022
+
+D'après le certificat :
+- Site valide entre le 08/12/2021 à 23:51:41 et le 02/03/2022 à 23:51:40
+- Clé publique basée sur Elyptic curve de 256bit
+- Signature avec SHA-256 with RSA Encryption
+```
+
+Pour Free on a :
+```
+Chiffrement avec TLS ECDHE RSA AES128 GCM SHA256, avec des clés de 128 bits
+Le site expire le 16 juillet 2022 
+
+D'après le certificat :
+- Site valide entre le 15/07/2021 à 02:00:00 et le 16/07/2022 à 01:59:59
+- Clé publique basée sur RSA de 2048bits
+- Signature avec SHA-256 with RSA Encryption
+```
+
