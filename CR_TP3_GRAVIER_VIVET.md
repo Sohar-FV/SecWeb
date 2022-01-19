@@ -466,3 +466,18 @@ SSL-Session:
 
 closed
 ```
+
+### 5)
+
+#### a)
+
+Il est utile de protéger une connexion en HTTPS car contrairement à HTTP, il chiffre les échanges entre le client et le serveur et permet de ne pas faire transiter les informations en clair. Pour cela, il utilise un protocole SSL/TLS qui assure le chiffrement des données grâce à une clé de chiffrement asymétrique.  
+
+#### b)
+
+On cherche à protéger les données qui transitent comme nos mot de passe ou nos login. Ils étaient auparavant récupérable en écoutant le réseau, par exemple avec le logiciel WireShark.
+
+#### c)
+
+En HTTP, le fournisseur de mail peut avoir accès à toutes les informations du mail (contenu, destinataire, en-tête, ...).      
+En HTTPS, le fournisseur de mail n'a accès qu'au header du mail.
