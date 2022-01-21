@@ -63,7 +63,76 @@ On cherche à modifier la variable qui contient 0 (modified). Pour cela on va es
 
 ## Exercice 3
 
+```
+import time
 
+global password
+
+def crack():
+    bobo = False
+    num = 0
+    while (num < 1000000) & (bobo == False):
+        x = '{0:06}'.format(num)
+        bobo = checkpassword(x)
+        if bobo :
+            return '{0:06}'.format(num)
+        num = num + 1
+    return -1
+
+def checkpassword(l):
+    for i in range(len(password)):
+        #time.sleep(1)
+        if password[i]!= l[i]:
+            return(False)
+    return(True)
+    
+password=input("L’ordi va deviner votre code PIN de chiffres entre 0 et 9 de longeur 6 : ")
+p = str(crack())
+print("Le mot de passe est : "+p)
+```
+
+import time
+
+global password
+
+def bruteForce():
+    bobo = False
+    num = 0
+    while (num < 1000000) & (bobo == False):
+        x = '{0:06}'.format(num)
+        bobo = checkpassword(x)
+        if bobo :
+            return '{0:06}'.format(num)
+        num = num + 1
+    return -1
+    
+    
+def sideChannel():
+    pwd_to_test = "000000"
+    
+    bobo = False
+    while bobo == False :
+        start = time.time()
+        #checkpassword
+        #
+        #
+        end = time.time()
+        r = end - start
+        if r != 1 :
+            #
+    return result
+
+def checkpassword(l):
+    for i in range(len(password)):
+        time.sleep(1)
+        if password[i]!= l[i]:
+            return(False)
+    return(True)
+    
+password=input("L’ordi va deviner votre code PIN de chiffres entre 0 et 9 de longeur 6 : ")
+#p = str(bruteForce())
+p = str(sideChannel())
+print("Le mot de passe est : "+p)
 
 
 
