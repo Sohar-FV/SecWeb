@@ -31,9 +31,39 @@ unset https_poxy
 
 ### 1) SQL Injection
 
-SELECT * FROM usersWHERE ‘email‘ = ’" . bob . "’ AND ‘password‘ = ’" . $password . "’";
-
+Mot de passe pas testé
+```
 mdp"' OR 'x'='x' LIMIT 1;--
+```
+
+## Exercice 2
+
+Avec le fichier file.c suivant :
+```c
+#include <stdlib.h>
+#include <unistd.h>
+#include <stdio.h>
+int main(int argc, char **argv)
+{
+  int modified;
+  char buffer[64];
+  modified = 0;
+  gets(buffer);
+  if(modified != 0) 
+  {
+    printf("you have changed the ’modified’ variable\n");
+  } else {
+    printf("Try again?\n");
+  }
+  return 0;
+}
+```
+
+On cherche à modifier la variable qui contient 0 (modified). Pour cela on va essayer de créer un buffer overflow sur la variable buffer qui a une taille de 64. Il faut donc donner en paramètre de la fonction une valeur qui fait plus de 64 caractères.
+
+## Exercice 3
+
+
 
 
 
