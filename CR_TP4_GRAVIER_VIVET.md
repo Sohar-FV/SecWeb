@@ -134,6 +134,23 @@ password=input("L’ordi va deviner votre code PIN de chiffres entre 0 et 9 de l
 p = str(sideChannel())
 print("Le mot de passe est : "+p)
 
+## Exercice 4  
+
+2/  
+Nous remarquons que la connexion à un même site est plus lente avec Tor qu'avec les autres navigateurs.  
+On explique cela car avec Tor, la requête est chiffrée pour les différents serveurs par lesquels elle va passé. Le temps de chiffrement et de déchiffrement est donc assez long et ralenti la requête (mais offre une sécurité importante).  
+
+3/  
+Les circuits sont différents pour chaque connexion, il s'agit toujours d'un circuit de trois machines.  
+
+4/  
+On remarque que lorsque l'on se rend sur le site https://iplookup.flagfox.net/ avec Firefox, le site est capable de donner le lieu d'où notre connexion est établie.  
+Avec Tor, le site indiquera la position du dernier serveur par lequel la requête passera, il ne sera donc pas capable de déterminer notre position.  
+
+7/  
+L'extension .onion est conçu pour ne pouvoir se suivre qu'avec Tor.
+
+
 
 
 
