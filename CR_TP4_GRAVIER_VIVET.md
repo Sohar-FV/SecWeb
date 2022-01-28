@@ -113,6 +113,8 @@ print("Le mot de passe est : "+p)
 print(duration)
 ```
 
+*Note : la ligne ```password = {0:06}.format(password)``` a été ajoutée car la console considère la saisie d'une chaine comme 002564 comme un entier et la stocke comme 2564*
+
 ## Exercice 4  
 
 2/  
