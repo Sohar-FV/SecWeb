@@ -68,6 +68,9 @@ On a ainsi rentré une valeur de 74 caractères qui nous a permis de modifier la
 
 ## Exercice 3
 
+L'objectif est d'utilisé le temps que prend la fonction *checkpassword()* à vérifier le mot de passe qu'on lui fourni pour en déduire les caractères corrects.
+En effet, la fonction dure 1 s pour le premier caractère, et une seconde de plus pour chaque caractère consécutif correct. Ainsi en testant des valeurs à partir de 000000 et en incrémentant le premier caractère, on peut savoir quel sera le premier caractère dès que la fonction durera plus de 1 seconde. On passe alors au caractère suivant en augmentant le temps à vérifier de 1s, et ainsi de suite jusqu'à déchiffrer le mot de passe.
+
 ```python
 # -*- coding: utf-8 -*-
 import time
