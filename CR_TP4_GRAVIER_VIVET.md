@@ -59,7 +59,10 @@ int main(int argc, char **argv)
 }
 ```
 
-On cherche à modifier la variable qui contient 0 (modified). Pour cela on va essayer de créer un buffer overflow sur la variable buffer qui a une taille de 64. Il faut donc donner en paramètre de la fonction une valeur qui fait plus de 64 caractères.
+On cherche à modifier la variable qui contient 0 (modified). Pour cela on va essayer de créer un buffer overflow sur la variable buffer qui a une taille de 64.  
+Pour cela, on cherche à écraser la valeur contenue dans modified, en rentrant un paramètre qui dépssera la taille que le programme lui aura alloué dans l'adresse mémoire.  
+Pour cela, on a besoin de dépasser la différence entre les adresses mémoires des variables.  
+On a ainsi rentré une valeur de 74 caractères qui nous a permis de modifier la variable modified.  
 
 ## Exercice 3
 
