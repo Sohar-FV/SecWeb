@@ -102,6 +102,7 @@ def checkpassword(l):
     return(True)
 
 password=input("L’ordi va deviner votre code PIN de chiffres entre 0 et 9 de longeur 6 : ")
+password = {0:06}.format(password)
 
 start = time.time()
 p = str(sideChannel()) 
