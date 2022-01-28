@@ -36,6 +36,8 @@ Mot de passe pas testé
 mdp"' OR 'x'='x' LIMIT 1;--
 ```
 
+Impossible de faire fonctionner les injections SQLs, que ce soit sur nos machines ou sur les machines de l'IUT. (on n'est pas doué)
+
 ## Exercice 2
 
 Avec le fichier file.c suivant :
@@ -135,6 +137,10 @@ Avec Tor, le site indiquera la position du dernier serveur par lequel la requêt
 L'extension .onion est conçu pour ne pouvoir se suivre qu'avec Tor.
 
 
+## Exercice 5  
+
+Comme pour l'exercice 2, on cherche à modifier une variable. 
+Pour cela, on passe en argument à la fonction un argument avec la taille nécessaire pour écrire sur la variable à modifier, en saisissant bien la valeur souhaitée à partir du 74ème caractère. 
 
 
 
