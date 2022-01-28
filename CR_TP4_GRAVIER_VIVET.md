@@ -63,76 +63,54 @@ On cherche à modifier la variable qui contient 0 (modified). Pour cela on va es
 
 ## Exercice 3
 
-```
+```python
+# -*- coding: utf-8 -*-
 import time
 
 global password
 
-def crack():
-    bobo = False
-    num = 0
-    while (num < 1000000) & (bobo == False):
-        x = '{0:06}'.format(num)
-        bobo = checkpassword(x)
-        if bobo :
-            return '{0:06}'.format(num)
-        num = num + 1
-    return -1
+def charListToString(l):
+    new = ""
+    for c in l:
+        new += c 
+    return new
 
-def checkpassword(l):
-    for i in range(len(password)):
-        #time.sleep(1)
-        if password[i]!= l[i]:
-            return(False)
-    return(True)
-    
-password=input("L’ordi va deviner votre code PIN de chiffres entre 0 et 9 de longeur 6 : ")
-p = str(crack())
-print("Le mot de passe est : "+p)
-```
-
-import time
-
-global password
-
-def bruteForce():
-    bobo = False
-    num = 0
-    while (num < 1000000) & (bobo == False):
-        x = '{0:06}'.format(num)
-        bobo = checkpassword(x)
-        if bobo :
-            return '{0:06}'.format(num)
-        num = num + 1
-    return -1
-    
-    
-def sideChannel():
-    pwd_to_test = "000000"
-    
-    bobo = False
-    while bobo == False :
+def sideChannel(): 
+    correctPwd = False
+    pwd_to_test = ["0","0","0","0","0","0"]
+    index = 0
+    while correctPwd == False & index < 6:
+        test = charListToString(pwd_to_test)
         start = time.time()
-        #checkpassword
-        #
-        #
+        correctPwd = checkpassword(test)
         end = time.time()
         r = end - start
-        if r != 1 :
-            #
+        if correctPwd == False:
+            if r < index+2:
+                temp = int(pwd_to_test[index]) + 1
+                pwd_to_test[index] = str(temp) 
+            else:
+                index += 1 
+    result = charListToString(pwd_to_test)   
     return result
 
-def checkpassword(l):
-    for i in range(len(password)):
-        time.sleep(1)
-        if password[i]!= l[i]:
-            return(False)
+def checkpassword(l): 
+    for i in range(len(password)): 
+        time.sleep(1) 
+        if password[i]!= l[i]: 
+            return(False) 
     return(True)
-    
+
 password=input("L’ordi va deviner votre code PIN de chiffres entre 0 et 9 de longeur 6 : ")
-#p = str(bruteForce())
-p = str(sideChannel())
+
+start = time.time()
+p = str(sideChannel()) 
+end = time.time()
+
+duration = end - start
 print("Le mot de passe est : "+p)
+print(duration)
+```
 
 ## Exercice 4  
 
