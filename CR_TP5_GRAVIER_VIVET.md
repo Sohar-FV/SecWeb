@@ -6,6 +6,9 @@ Sujet : https://sancy.iut-clermont.uca.fr/~lafourcade/SECWEB/2022-TP5-http-https
 
 ### 1)
 
+Pour récupérer les informations du certificat, on a tapé la commande suivante :  
+```openssl rsa -noout -text -check -in /etc/ssl/private/ssl-cert-snakeoil.key```
+
 ### 2)
 
 ### 3)
