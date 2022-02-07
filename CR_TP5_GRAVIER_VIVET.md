@@ -2,6 +2,8 @@
 
 Sujet : https://sancy.iut-clermont.uca.fr/~lafourcade/SECWEB/2022-TP5-http-https.pdf  
 
+Réalisé par Léo GRAVIER et Florian VIVET
+
 ## Exercice 1 (Création des certificats auto-signés)
 
 ### 1)
@@ -178,6 +180,16 @@ Pour tester les protocoles autorisés, on lance la commande suivante :```./tests
 ## Exercise 4 (Mettre en place TLS 1.3)
 
 ### 1)
+
+On vérifie si les sites suivants sont en TLS 1.2 ou 1.3 :
+
+```
+openssl s_client -proxy 193.49.118.36:8080 -connect www.google.com -tls1_2
+openssl s_client -proxy 193.49.118.36:8080 -connect www.google.com -tls1_3
+openssl s_client -proxy 193.49.118.36:8080 -connect ayesh.me:443 -tls1_3
+```
+
+
 
 ### 2)
 
