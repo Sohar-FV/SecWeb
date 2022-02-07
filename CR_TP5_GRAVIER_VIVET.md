@@ -210,6 +210,9 @@ On joue avec la cryptographie.
 
 ### 1)
 
+ openssl genrsa -out cert/rootca.key 4096
+
+
 ### 2)
 
 ### 3)
