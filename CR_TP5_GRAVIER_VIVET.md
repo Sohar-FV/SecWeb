@@ -188,8 +188,7 @@ openssl s_client -proxy 193.49.118.36:8080 -connect www.google.com -tls1_2
 openssl s_client -proxy 193.49.118.36:8080 -connect www.google.com -tls1_3
 openssl s_client -proxy 193.49.118.36:8080 -connect ayesh.me:443 -tls1_3
 ```
-
-
+On voit que www.google.com supporte TLS 1.2 mais pas TLS 1.3. ayesh.me quant à lui supporte TLS 1.3.
 
 ### 2)
 
