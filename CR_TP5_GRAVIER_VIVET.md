@@ -192,11 +192,19 @@ On voit que www.google.com supporte TLS 1.2 mais pas TLS 1.3. ayesh.me quant à 
 
 ### 2)
 
+On retire la mention ```all -SSLv2 -SSLv3.``` dans le fichier ```etc/apache2/mods-available/ssl.conf```
+
 ### 3)
 
-### 4)
+SSL 2 et 3 ont été retirés à l'étape précédente, de même que TLS 1 et 1.1 à cette étape. Le site supporte alors TLS 1.2.
+
+### 4) 
+
+Après avoir indiqué ```SSLProtocol -all +TLSv1.3 +TLSv1.2``` dans le fichier ```etc/apache2/mods-available/ssl.conf```, on peut voir que le site supporte bien TLS 1.2 et 1.3.  
 
 ### 5)
+
+On joue avec la cryptographie.
 
 ## Exercise 5 (https en gérant la cryptographie avec openssl)
 
