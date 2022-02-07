@@ -137,7 +137,7 @@ Afin de changer la durée de validité des certificats générés, on a modifié
 if [ "$1" != "generate-default-snakeoil" ]; then
     if ! openssl req -config $TMPFILE -new -x509 -days 10 -nodes -sha256 \
 ```
-La valeur suivant ```days``` est passée de 3650 (10ans) à 10 jours.  
+La valeur suivant l'option ```-days``` est passée de 3650 (10ans) à 10 jours.  
 
 ## Exercice 2 (Configuration d’apache2 pour activer https)
 
