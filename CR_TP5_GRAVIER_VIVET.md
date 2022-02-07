@@ -11,8 +11,8 @@ Pour récupérer les informations du certificat, on a tapé la commande suivante
 openssl x509 -text -in  /etc/ssl/certs/ssl-cert-snakeoil.pem
 ```
 
-valable jusqu'au 05/02/2030
-Caractéristiques :
+On peut voir que ce certificat est valable jusqu'au 05/02/2030.  
+D'autres caractéristiques sont visible :
 
 ```
 Certificate:  
