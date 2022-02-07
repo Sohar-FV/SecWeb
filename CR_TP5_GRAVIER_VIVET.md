@@ -141,11 +141,11 @@ La valeur suivant l'option ```-days``` est passée de 3650 (10ans) à 10 jours.
 
 ## Exercice 2 (Configuration d’apache2 pour activer https)
 
-### 1)
+### 1) La requête vers http://0.0.0.0:443 donne une erreur ```Bad request```, le serveur demandant une requête HTTPS
 
-### 2)
+### 2) En se connectant en https, le site fonctionne.
 
-### 3)
+### 3) Pour tester les protocoles autorisés, on lance la commande suivante :```./testssl.sh/testssl.sh https://0.0.0.0:443```
 
 ## Exercice 3 (Rediriger http vers https)
 
