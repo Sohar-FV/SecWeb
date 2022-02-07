@@ -2,8 +2,6 @@
 
 Sujet : https://sancy.iut-clermont.uca.fr/~lafourcade/SECWEB/2022-TP5-http-https.pdf  
 
-## ---
-
 ## Exercice 1 (Création des certificats auto-signés)
 
 ### 1)
