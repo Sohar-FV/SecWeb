@@ -147,6 +147,17 @@ La valeur suivant l'option ```-days``` est passée de 3650 (10ans) à 10 jours.
 
 ### 3) Pour tester les protocoles autorisés, on lance la commande suivante :```./testssl.sh/testssl.sh https://0.0.0.0:443```
 
+```
+ SSLv2      not offered (OK)
+ SSLv3      not offered (OK)
+ TLS 1      offered (deprecated)
+ TLS 1.1    offered (deprecated)
+ TLS 1.2    offered (OK)
+ TLS 1.3    offered (OK): final
+ NPN/SPDY   not offered
+ ALPN/HTTP2 http/1.1 (offered)
+```
+
 ## Exercice 3 (Rediriger http vers https)
 
 ## Exercise 4 (Mettre en place TLS 1.3)
