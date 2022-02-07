@@ -132,6 +132,12 @@ lmbodGbLk5bsbg==
 
 ### 3)
 
+
+```
+if [ "$1" != "generate-default-snakeoil" ]; then
+    if ! openssl req -config $TMPFILE -new -x509 -days 10 -nodes -sha256 \
+```
+
 ## Exercice 2 (Configuration d’apache2 pour activer https)
 
 ### 1)
