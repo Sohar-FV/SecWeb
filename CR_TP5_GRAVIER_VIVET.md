@@ -166,6 +166,15 @@ Pour tester les protocoles autorisés, on lance la commande suivante :```./tests
 
 ## Exercice 3 (Rediriger http vers https)
 
+```
+<Directory "/html">
+        RewriteEngine On
+                RewriteBase "/html/"
+                RewriteCond %{HTTPS} off
+                RewriteRule ^(.*)$ https://0.0.0.0:443 [L,R=301]
+</Directory>
+```
+
 ## Exercise 4 (Mettre en place TLS 1.3)
 
 ### 1)
