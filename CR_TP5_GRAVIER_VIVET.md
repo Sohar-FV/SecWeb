@@ -210,13 +210,45 @@ On joue avec la cryptographie.
 
 ### 1)
 
- openssl genrsa -out cert/rootca.key 4096
+On a généré une clé RSA de 4096 bits :   
+```
+openssl genrsa -out cert/rootca.key 4096
+```
 
+### 2)  
 
-### 2)
+On a généré le certificat à partir de cette clé, qu'on a placé dans le fichier cert/rootca.crt :  
+```
+openssl req -new -x509 -key cert/rootca.key -out cert/rootca.crt
+```
 
 ### 3)
 
+On a généré une clé RSA de 4096 bits :  
+```
+openssl genrsa -out cert/inter.key 4096
+```
+
+On a généré le certificat à partir de cette clé, qu'on a placé dans le fichier cert/inter.csr :  
+```
+openssl req -new -x509 -key cert/rootca.key -out cert/inter.csr
+```
+
+Puis la signature :  
+```
+openssl x509 -req -in cert/inter.csr -CA cert/rootca.crt -CAkey cert/rootca.key -set_serial 01 -out cert/inter.crt
+```
+
+On exporte les certificats pkcs12 :  
+```
+openssl pkcs12 -export -out cert/inter.p12 -inkey cert/inter.key -in cert/inter.crt -chain -CAfile cert/rootca.crt
+```
+
+Export de la clé et du certificat :  
+```
+openssl pkcs12 -in cert/inter.p12 -out cert/my.key.pem -nocerts -nodes  
+openssl pkcs12 -in cert/inter.p12 -out cert/my.crt.pem -clcerts -nokeys  
+```
 ### 4)
 
 ### 5)
